@@ -4,4 +4,4 @@
   <div class="greetings">hello world</div>
 </template>
 
-<style scoped></style>
+<style lang=""></style>
