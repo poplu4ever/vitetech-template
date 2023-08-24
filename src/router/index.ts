@@ -1,10 +1,10 @@
-import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
-import routes from '~pages'
+import { createRouter, createWebHistory } from 'vue-router/auto'
+// import HomeView from '../views/HomeView.vue'
+// import routes from '~pages'
 
 const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
-  routes
+  history: createWebHistory(import.meta.env.BASE_URL)
+  // routes
   // routes: [
   //   {
   //     path: '/',
@@ -20,13 +20,6 @@ const router = createRouter({
   //     component: () => import('../views/AboutView.vue')
   //   }
   // ]
-})
-
-router.beforeEach((to, from, next) => {
-  if (to.path === '/home') {
-    next('/')
-  }
-  next()
 })
 
 export default router

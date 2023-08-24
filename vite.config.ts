@@ -4,15 +4,17 @@ import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 
-import Pages from 'vite-plugin-pages'
+import UnoCSS from 'unocss/vite'
+import VueRouter from 'unplugin-vue-router/vite'
 import AutoImport from 'unplugin-auto-import/vite'
 
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
+    VueRouter(),
     vue(),
     vueJsx(),
-    Pages(),
+    UnoCSS(),
     AutoImport({
       // targets to transform
       include: [
