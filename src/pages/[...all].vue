@@ -1,0 +1,7 @@
+<template>
+  <div>404 Page</div>
+</template>
+
+<script setup lang="ts"></script>
+
+<style scoped></style>
