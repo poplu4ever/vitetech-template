@@ -1,5 +1,5 @@
 <template>
-  <div>404 Page Oh No</div>
+  <div>user component</div>
 </template>
 
 <script setup lang="ts"></script>
