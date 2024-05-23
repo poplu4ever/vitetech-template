@@ -1,14 +1,9 @@
 <template>
-  <div>Hello world by vite-plugin-pages</div>
-  <RouterLink to="/about">About</RouterLink>
-  <div>{{ msg }}</div>
-  <div class="p-4">hello unocss</div>
-  <h1 class="text-3l font-bold underline">Hello tailwind</h1>
-  <HelloWorld></HelloWorld>
+  <div ref="target">home</div>
 </template>
 
 <script lang="ts">
-import HelloWorld from '@/components/HelloWorld.vue'
+import { registerSW } from 'virtual:pwa-register'
 
 export default {
   setup() {
@@ -17,8 +12,25 @@ export default {
       msg
     }
   },
-  components: { HelloWorld }
+  onMounted() {
+    registerSW({
+      immediate: true,
+      onNeedRefresh() {
+        console.log('need refresh')
+      },
+      onRegisteredSW(_url, registration) {
+        setInterval(() => {
+          registration && registration.update()
+        }, 36000)
+      }
+    })
+  }
 }
 </script>
 
 <style lang="scss" scoped></style>
+
+<route lang="yaml">
+meta:
+  layout: default
+</route>
